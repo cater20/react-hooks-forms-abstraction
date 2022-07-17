@@ -5,11 +5,17 @@ function Form() {
   const [lastName, setLastName] = useState("Henry");
 
   function handleFirstNameChange(event) {
-    setFirstName(event.target.value);
+    setFormData({
+      ...FormData,
+      firstName:event,target,value
+    });
   }
 
   function handleLastNameChange(event) {
-    setLastName(event.target.value);
+    setFormData({
+      ...FormData,
+      lastName:event,target,value
+    });
   }
 
   return (
