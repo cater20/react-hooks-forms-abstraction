@@ -5,6 +5,8 @@ function Form() {
   const [lastName, setLastName] = useState("Henry");
 
   function handleFirstNameChange(event) {
+    const name=event.target.name;
+    const value=event.target.value;
     setFormData({
       ...FormData,
       firstName:event,target,value
@@ -12,6 +14,8 @@ function Form() {
   }
 
   function handleLastNameChange(event) {
+    const name=event.target.name;
+    const value=event.target.value;
     setFormData({
       ...FormData,
       lastName:event,target,value
@@ -20,8 +24,16 @@ function Form() {
 
   return (
     <form>
-      <input type="text" onChange={handleFirstNameChange} value={firstName} />
-      <input type="text" onChange={handleLastNameChange} value={lastName} />
+      <input type="text" 
+      name="firstName"
+      onChange={handleFirstNameChange} 
+      value={FormData.firstName} />
+
+      <input type="text" 
+      name="lastName"
+      onChange={handleLastNameChange} 
+      value={FormData.lastName} />
+
       <button type="submit">Submit</button>
     </form>
   );
